@@ -1,0 +1,17 @@
+[
+    {
+      "id": "templateId_1",
+      "name": "Aesthetic template",
+      "alignment": "RIGHT"
+    },
+    {
+      "id": "templateId_2",
+      "name": "Balanced template",
+      "alignment": "CENTER"
+    },
+    {
+      "id": "templateId_3",
+      "name": "Classic template",
+      "alignment": "LEFT"
+    }
+]

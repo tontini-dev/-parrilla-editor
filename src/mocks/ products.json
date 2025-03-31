@@ -1,0 +1,20 @@
+[
+    {
+      "id": "p1",
+      "name": "Blue Jean",
+      "image": "https://picsum.photos/200",
+      "price": "36,87 EUR"
+    },
+    {
+      "id": "p2",
+      "name": "White Shirt",
+      "image": "https://picsum.photos/200",
+      "price": "24,99 EUR"
+    },
+    {
+      "id": "p3",
+      "name": "Red Dress",
+      "image": "https://picsum.photos/200",
+      "price": "49,90 EUR"
+    }
+]
