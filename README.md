@@ -102,12 +102,6 @@ Verá la parrilla tal como fue creada.
 
 ---
 
-## 📸 Captura de pantalla
-
-> _(Puedes agregar aquí una imagen si quiser mostrar visualmente el resultado)_
-
----
-
 ## 👨‍💻 Autor
 
 Desarrollado por [Matheus Lara Tontini](https://tontini.dev)
