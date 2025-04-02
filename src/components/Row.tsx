@@ -27,7 +27,11 @@ const Row: React.FC<Props> = ({ row, onDropProduct, onDragStart, onRemoveProduct
 
   return (
     <div
-      className={`row row--${row.alignment.toLowerCase()}`}
+      className={`row ${
+        row.products.length < 3
+          ? `row--${row.alignment.toLowerCase()}`
+          : 'row--fixed'
+      }`}
       onDragOver={handleDragOver}
       onDrop={handleDrop}
     >
