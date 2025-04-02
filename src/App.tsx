@@ -8,6 +8,15 @@ import './App.scss'
 function App() {
   const [allProducts, setAllProducts] = useState<Product[]>([])
   const [rows, setRows] = useState<RowType[]>([])
+  const [zoom, setZoom] = useState(1)
+
+  const handleZoomIn = () => {
+    setZoom((prev) => Math.min(prev + 0.1, 2))
+  }
+  
+  const handleZoomOut = () => {
+    setZoom((prev) => Math.max(prev - 0.1, 0.5))
+  }
 
   const handleDragStart = (event: React.DragEvent, product: Product) => {
     event.dataTransfer.setData('product', JSON.stringify(product))
@@ -177,16 +186,31 @@ function App() {
 
       <section>
         <h2>Zona de edición</h2>
-        {rows.map((row) => (
-          <Row
-            key={row.id}
-            row={row}
-            onDropProduct={handleDropProduct}
-            onDragStart={handleDragStart}
-            onRemoveProduct={handleRemoveProductFromRow}
-            onChangeAlignment={handleChangeAlignment}
-          />
-        ))}
+
+        <div style={{ marginBottom: '1rem' }}>
+          <button onClick={handleZoomOut}>-</button>
+          <span style={{ margin: '0 1rem' }}>Zoom: {(zoom * 100).toFixed(0)}%</span>
+          <button onClick={handleZoomIn}>+</button>
+        </div>
+
+        <div
+          style={{
+            transform: `scale(${zoom})`,
+            transformOrigin: 'top left',
+            transition: 'transform 0.2s ease',
+          }}
+        >
+          {rows.map((row) => (
+            <Row
+              key={row.id}
+              row={row}
+              onDropProduct={handleDropProduct}
+              onDragStart={handleDragStart}
+              onRemoveProduct={handleRemoveProductFromRow}
+              onChangeAlignment={handleChangeAlignment}
+            />
+          ))}
+        </div>
 
         <div style={{ marginTop: '1rem', display: 'flex', gap: '1rem' }}>
           <button onClick={handleAddRow}>➕ Añadir nueva fila</button>
